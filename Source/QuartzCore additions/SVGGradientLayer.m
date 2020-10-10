@@ -162,7 +162,7 @@
             CGRect rect = CGRectMake(startPoint.x, startPoint.y, rad, rad);
             rect = CGRectApplyAffineTransform(rect, selfTransform);
             rect = CGRectApplyAffineTransform(rect, absoluteTransform);
-            radius = CGRectGetHeight(rect)/2.f;
+            // radius = CGRectGetHeight(rect)/2.f;
             
             // transform absolute - due to user space
             CGContextConcatCTM(ctx, absoluteTransform);
