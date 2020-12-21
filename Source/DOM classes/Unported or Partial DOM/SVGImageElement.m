@@ -179,11 +179,11 @@ CGImageRef SVGImageCGImage(UIImage *img)
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_href]];
-        SVGImageRef image = [SVGImage imageWithData:imageData];
+        SVGImageRef image = [SVGImage imageWithDataSafely:imageData];
         
         //    _href = @"http://b.dryicons.com/images/icon_sets/coquette_part_4_icons_set/png/128x128/png_file.png";
         //    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_href]];
-        //    UIImage *image = [UIImage imageWithData:imageData];
+        //    UIImage *image = [UIImage imageWithDataSafely:imageData];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             layer.contents = (id)SVGImageCGImage(image);

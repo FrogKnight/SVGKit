@@ -115,7 +115,7 @@ typedef void (^SVGKImageAsynchronousLoadingDelegate)(SVGKImage* loadedImage, SVG
  This is because SVG's cannot parse correctly without the metadata about where
  the file came from: e.g. they cannot process relative links, cross-references, etc.
  */
-+(SVGKImage*) imageWithData:(NSData *)newNSData; // if you have custom source's you want to use
++(SVGKImage*) imageWithDataSafely:(NSData *)newNSData; // if you have custom source's you want to use
 + (SVGKParser*) imageParserWithDataAsynchronously:(NSData *)newNSData onCompletion:(SVGKImageAsynchronousLoadingDelegate)blockCompleted;
 + (SVGKImage*) imageWithDataAsynchronously:(NSData *)newNSData onCompletion:(SVGKImageAsynchronousLoadingDelegate)blockCompleted;
 
